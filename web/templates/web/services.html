@@ -1,0 +1,111 @@
+{% include 'web/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SERVICES</title>
+
+    <style>
+
+        .services{
+            margin-top: 7rem;
+        }
+
+        .services .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+            gap: 1.5rem;
+        }
+
+        .services .box-container .box{
+            background: var(--bg-color);
+            border-radius: 1rem;
+            padding: 3rem;
+            text-align: center;
+            border: .2rem solid var(--black);
+
+            &:hover{
+            border: var(--border);
+             }
+        }
+
+        .services .box-container .box i{
+            font-size: 4rem;
+            color: var(--blue);
+            margin-bottom: 2rem;
+        }
+
+        .services .box-container .box h3{
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .services .box-container .box p{
+            padding: 1rem 0;
+            font-size: 1.4rem;
+            color: var(--light-color);
+            line-height: 2;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!--service section starts-->
+
+<section class="services" id="services">
+
+    <div class="heading">
+        <span>our services</span>
+        <h1>countless experiences</h1>
+    </div>
+
+    <div class="box-container">
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <i class="fas fa-globe"></i>
+            <h3>worldwide</h3>
+            <p>Video provides a powerful way to help you prove your point. When you click</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <i class="fas fa-hiking"></i>
+            <h3>adventures</h3>
+            <p>Video provides a powerful way to help you prove your point. When you click</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+            <i class="fas fa-utensils"></i>
+            <h3>food & drinks</h3>
+            <p>Video provides a powerful way to help you prove your point. When you click</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="600">
+            <i class="fas fa-hotel"></i>
+            <h3>affordable hotels</h3>
+            <p>Video provides a powerful way to help you prove your point. When you click</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="750">
+            <i class="fas fa-wallet"></i>
+            <h3>affordable price</h3>
+            <p>Video provides a powerful way to help you prove your point. When you click</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="900">
+            <i class="fas fa-headset"></i>
+            <h3>24/7 support</h3>
+            <p>Video provides a powerful way to help you prove your point. When you click</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!--service section ends-->
+
+
+</body>
+</html>

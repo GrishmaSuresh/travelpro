@@ -1,0 +1,49 @@
+<!-- tourist_spots.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Spots in {{ place }}</title>
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card {
+            border: 1px solid #ddd;
+            padding: 16px;
+            margin: 16px;
+            width: 250px;
+            box-shadow: 2px 2px 6px #ccc;
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Tourist Spots in {{ place }}</h1>
+
+<div class="card-container">
+    {% for spot in spots %}
+        <div class="card">
+            <img src="{{ spot.image_url }}" alt="{{ spot.name }}">
+            <h3>{{ spot.name }}</h3>
+            <p>{{ spot.description }}</p>
+            <p>Price: ${{ spot.price }}</p>
+            <input type="checkbox" name="selected_spots" value="{{ spot.id }}"> Select
+        </div>
+    {% endfor %}
+</div>
+
+<button type="submit">Submit</button>
+
+</body>
+</html>

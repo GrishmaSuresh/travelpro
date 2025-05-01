@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>base</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.3/aos.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+        * {
+            font-family: 'poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+        }
+
+        :root {
+
+            --blue:#29d9d5 ;
+            --black: #111;
+            --white: #fff;
+            --light-color: #aaa;
+            --bg-color: #222;
+            --black-bg: rgba(17, 17, 17, 0.53);
+            --border: .2rem solid var(--blue);
+
+        }
+
+
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 9rem;
+
+
+            ::-webkit-scrollbar {
+                width: .9rem;
+                border-radius: 2px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: var(--black);
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: var(--blue);
+                border-radius: 5px;
+
+             }
+
+        }
+
+        section{
+            padding: 3rem 9%;
+
+        }
+
+        body {
+            background: var(--black);
+            overflow: hidden;
+        }
+
+        .heading{
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .heading span{
+            color: var(--blue);
+            font-size: 2rem;
+        }
+        .heading h1{
+            font-size: 4rem;
+            color: var(--white);
+        }
+
+        .btn {
+            margin-top: 1rem;
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-size: 1.7rem;
+            color: var(--blue);
+            border: var(--border);
+            border-radius: 5rem;
+            cursor: pointer;
+            background: none;
+
+        &:hover {
+            background: var(--blue);
+            color: var(--black);
+
+        }
+
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 9%;
+
+        .navbar a {
+            font-size: 1.7rem;
+            color: var(--light-color);
+            display: inline-block;
+            margin: 0 1rem;
+
+            &:hover {
+                color: var(--blue);
+                border-bottom: 2px solid var(--blue);
+            }
+
+
+        }
+        .btn{
+            margin-top: 0;
+        }
+    }
+
+        .logo {
+            font-size: 2.5rem;
+            color: var(--white);
+            font-weight: bolder;
+
+        }
+
+        .logo i {
+            color: var(--blue);
+            padding-right: 0.5rem;
+        }
+
+        #menu-btn{
+            font-size: 2.5rem;
+            color: var(--white);
+            cursor: pointer;
+            display: none;
+        }
+
+        .navbar a.active{
+            color: var(--blue);
+            border-bottom: 2px solid var(--blue);
+        }
+        .hlo{
+            color: #bdbdbdd6;
+            font-size: 25px;
+            font-family: monospace;
+        }
+
+
+    </style>
+
+</head>
+<script>
+    navbar = document.querySelector(".navbar").querySelectorAll("a");
+    console.log(navbar);
+
+    navbar.forEach(element => {
+        element.addEventListener("click", function (){
+            navbar.forEach(nav=>nav.classList.remove("active"))
+
+            this.classList.add("active");
+        })
+    })
+</script>
+<body>
+<!--header section starts-->
+
+<header class="header">
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo"><i class="fas fa-paper-plane"></i>travel </a>
+
+    <nav class="navbar" id="navbar">
+        <a data-aos="zoom-in-left" data-aos-delay="300" href="home" class="active">home</a>
+        <a data-aos="zoom-in-left" data-aos-delay="450" href="about">about</a>
+        <a data-aos="zoom-in-left" data-aos-delay="600" href="destination">destination</a>
+        <a data-aos="zoom-in-left" data-aos-delay="750" href="services" >services</a>
+        <a data-aos="zoom-in-left" data-aos-delay="900" href="gallery">gallery</a>
+        <a data-aos="zoom-in-left" data-aos-delay="1150" href="blogs">blogs</a>
+    </nav>
+    {% if user.is_authenticated %}
+    <h4 class="hlo"> Hello, {{ user.first_name }}</h4>
+    <a data-aos="zoom-in-left" data-aos-delay="1300" href="accounts/logout" class="btn">Logout</a>
+    {% else %}
+    <a data-aos="zoom-in-left" data-aos-delay="1300" href="accounts/register" class="btn reg">Register</a>
+    <a data-aos="zoom-in-left" data-aos-delay="1300" href="accounts/login" class="btn">Login</a>
+    {% endif %}
+
+</header>
+
+<!--header section ends-->
+{% block rest %}{% endblock %}
+</body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.3/aos.js">
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        offset: 150,
+
+    });
+
+
+</script>
+
+
+</html>

@@ -1,0 +1,303 @@
+{% include 'web/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+        .home {
+            margin: 0 auto;
+            margin-top: 9rem;
+            width: 90%;
+            border-radius: 1rem;
+            background: linear-gradient(var(--black-bg), var(--black-bg)), url( {% static 'web/images/background.jpg' %} ) no-repeat ;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 5rem;
+
+        .content {
+
+            text-align: center;
+        }
+
+        }
+        .home .content span {
+            font-weight: bold;
+            color: transparent;
+            -webkit-text-stroke: 0.1rem var(--white);
+            font-size: 4vw;
+            display: block;
+        }
+
+        .home .content h3 {
+            font-size: 6vw;
+            color: var(--white);
+        }
+
+        .home .content p {
+            max-width: 60rem;
+            margin: 1rem auto;
+            font-size: 1.4rem;
+            color: var(--light-color);
+            line-height: 2;
+        }
+
+        .book-form{
+            width: 80%;
+            margin: 1rem auto;
+            margin-top: -5rem;
+            background: var(--bg-color);
+            border-radius: 1rem;
+            box-shadow: 0 .5rem 1rem rgba(17,17,17,.3);
+            padding: 3rem 2rem;
+
+        }
+        .book-form form{
+                display: flex;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+
+        .book-form form .inputBox{
+            flex: 1 1 25rem;
+        }
+
+        .book-form form .inputBox span{
+            font-size: 1.4rem;
+            color: var(--light-color);
+        }
+        .book-form form .inputBox input{
+            width: 100%;
+            padding: 1.2rem 1.4rem;
+            border-radius: 5rem;
+            border: var(--border);
+            font-size: 1.6rem;
+            color: var(--light-color);
+            text-transform: none;
+            background: none;
+            margin-top: 1rem;
+        }
+
+        .book-form form .btn{
+            flex: 1 1 15rem;
+        }
+
+        .footer .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            gap: 1.5rem;
+        }
+
+        .footer .box-container .box{
+            padding: 1rem 0;
+        }
+        .footer .box-container .box .logo{
+            padding-bottom: 1rem;
+        }
+
+        .footer .box-container .box h3{
+            font-size: 2.2rem;
+            color: var(--white);
+            padding: 1rem 0;
+        }
+        .footer .box-container .box p{
+            font-size: 1.4rem;
+            color: var(--light-color);
+            padding: 1rem 0;
+            line-height: 2;
+        }
+
+        .footer .box-container .box p i{
+            padding-right: .5rem;
+            color: var(--blue);
+        }
+
+        .footer .box-container .box .share{
+            padding-top: 1rem;
+        }
+
+        .footer .box-container .box .share a{
+            height: 4.5rem;
+            width: 4.5rem;
+            line-height: 4rem;
+            font-size:  1.7rem;
+            border-radius: 50%;
+            border: var(--border);
+            color: var(--white);
+            margin-right: .5rem;
+            text-align: center;
+
+            &:hover{
+            background: var(--blue);
+            color: var(--black);
+             }
+        }
+
+        .footer .box-container .box .links{
+            font-size: 1.4rem;
+            color: var(--light-color);
+            padding: 1rem 0;
+            display: block;
+
+            &:hover  {
+             color: var(--blue);
+
+             }
+
+        }
+        .footer .box-container .box .links i{
+                padding-right: .5rem;
+                color: var(--blue);
+            }
+        .footer .box-container .box a i :hover{
+            padding-right: 2rem;
+        }
+
+        .footer .box-container .box  form .email{
+            width: 100%;
+            border-radius: 5rem;
+            border: var(--border);
+            background: none;
+            font-size: 1.5rem;
+            text-transform: none;
+            color: var(--light-color);
+            margin-bottom: 1rem;
+            padding: 1.2rem 1.4rem;
+        }
+
+        .video-container{
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+<!--home section starts-->
+
+<section class="home" id="home">
+    <div class="content">
+
+        <span data-aos="fade-up" data-aos-delay="150">follow us</span>
+        <h3 data-aos="fade-up" data-aos-delay="300">to the unknown</h3>
+        <p data-aos="fade-up" data-aos-delay="450">Video provides a powerful way to help you prove your point. When you click Online
+            Video, you can paste in the embed code for the video you want to add. </p>
+        <a data-aos="fade-up" data-aos-delay="600" href="#book-form" class="btn">book now</a>
+
+    </div>
+</section>
+
+
+<!--home section ends-->
+
+<!--booking form section starts-->
+
+<section class="book-form" id="book-form">
+
+    <form action="packages" method="post">
+        {% csrf_token %}
+        <div data-aos="zoom-in" data-aos-delay="150" class="inputBox" >
+            <span>where to?</span>
+            <input type="text" placeholder="state name" value="" name="place">
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="300" class="inputBox" >
+            <span>when?</span>
+            <input type="date" value="" name="date">
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="450" class="inputBox" >
+            <span>how many?</span>
+            <input type="number" placeholder="number of travelers" value="" name="members">
+        </div>
+        <input data-aos="zoom-in" data-aos-delay="600" type="submit" value="find now" class="btn">
+    </form>
+
+</section>
+
+<!--booking form section ends-->
+
+<!--footer section starts-->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <a href="#" class="logo"><i class="fas fa-paper-plane"></i>travel </a>
+            <p>Video provides a powerful way to help you prove your point. When you click</p>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+            <h3>quick links</h3>
+            <a href="#home" class="links"><i class="fas fa-arrow-right"></i> home </a>
+            <a href="#about" class="links"><i class="fas fa-arrow-right"></i> about </a>
+            <a href="#destination" class="links"><i class="fas fa-arrow-right"></i> destination </a>
+            <a href="#services" class="links"><i class="fas fa-arrow-right"></i> services </a>
+            <a href="#gallery" class="links"><i class="fas fa-arrow-right"></i> gallery </a>
+            <a href="#blogs" class="links"><i class="fas fa-arrow-right"></i> blogs </a>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+            <h3>contact info</h3>
+            <p><i class="fas fa-map"></i>mumbai, india</p>
+            <p><i class="fas fa-phone"></i>+123-456-7890</p>
+            <p><i class="fas fa-envelope"></i>shaikhanas@gmail.com</p>
+            <p><i class="fas fa-clock"></i>7:00am - 10:00am</p>
+        </div>
+
+        <div class="box"
+        >
+            <h3>newsletter</h3>
+            <p>subscribe for latest updates</p>
+            <form action="">
+                <input type="email" name="" placeholder="enter your email" class="email" id="">
+                <input type="submit" value="subscribe" class="btn">
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="credit">created by <span>mr. web designer</span> | all rights reserved!</div>
+
+<!--footer section ends-->
+
+
+
+
+
+</body>
+</html>

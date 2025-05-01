@@ -1,0 +1,119 @@
+{% include 'web/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GALLERY</title>
+
+    <style>
+
+        .gallery{
+            margin-top: 8rem;
+        }
+
+        .gallery .box-container{
+            columns: 3 25rem;
+            column-gap: 1.5rem;
+        }
+
+        .gallery .box-container .box{
+            margin-bottom: 1rem;
+            break-inside: avoid;
+        }
+
+        .gallery .box-container .box img{
+            width: 100%;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .gallery .box-container .box span{
+            font-size: 1.4rem;
+            color: var(--light-color);
+        }
+
+        .gallery .box-container .box h3{
+            font-size: 2rem;
+            color: var(--white);
+            margin-top: .5rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--gallery section starts-->
+
+<section class="gallery" id="gallery">
+
+    <div class="heading">
+        <span>our gallery</span>
+        <h1>we record memories</h1>
+    </div>
+
+    <div class="box-container">
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <img src="{% static 'web/images/iceland.jpg' %}" alt="">
+            <span>travel spot</span>
+            <h3>iceland</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <img src="{% static 'web/images/greenland.jpg' %}" alt="">
+            <span>travel spot</span>
+            <h3>greenland</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+            <img src="{% static 'web/images/alaska.jpg' %}" alt="">
+            <span>travel spot</span>
+            <h3>alaska</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <img src="{% static 'web/images/thailand.jpg' %}" alt="">
+            <span>travel spot</span>
+            <h3>thailand</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <img src="{% static 'web/images/brazil.jpg' %}" alt="">
+            <span>travel spot</span>
+            <h3>brazil</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+            <img src="{% static 'web/images/maldive.jpg' %}" alt="">
+            <span>travel spot</span>
+            <h3>maldive</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <img src="{% static 'web/images/iceland1.jpg' %}" alt="">
+            <span>travel spot</span>
+            <h3>iceland</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <img src="{% static 'web/images/alaska1.jpg' %}" alt="">
+            <span>travel spot</span>
+            <h3>alaska</h3>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+            <img src="{% static 'web/images/indonesia.jpg' %}" alt="">
+            <span>travel spot</span>
+            <h3>indonesia</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!--gallery section ends-->
+
+
+</body>
+</html>

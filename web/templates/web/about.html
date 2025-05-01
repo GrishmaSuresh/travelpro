@@ -1,0 +1,290 @@
+{% include 'web/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABOUT</title>
+
+    <style>
+        .about{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 7.6rem;
+        }
+
+        .about .video-container{
+            flex: 1 1 42rem;
+        }
+
+        .about .video-container .controls{
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .about .video-container .controls span{
+            display: inline-block;
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            background: var(--white);
+            cursor: pointer;
+            margin: .7rem;
+
+            &:hover{
+                background: var(--blue);
+             }
+        }
+
+        .about .video-container video{
+            border-radius: 1rem;
+            width: 100%;
+        }
+
+        .about .content{
+            flex: 1 1 42rem;
+            margin-bottom: 5rem;
+        }
+        .about .content span{
+            color: var(--blue);
+            font-size: 2rem;
+        }
+
+        .about .content h3{
+            color: var(--white);
+            font-size: 4rem;
+            margin-top: .5rem;
+        }
+
+        .about .content p{
+            padding: 1rem 0;
+            font-size: 1.4rem;
+            color: var(--light-color);
+            line-height: 2;
+        }
+
+        .review{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .review .content{
+            flex: 1 1 42rem;
+        }
+        .review .content span{
+            font-size: 2rem;
+            color: var(--blue);
+        }
+        .review .content h3{
+            font-size: 3rem;
+            color: var(--white);
+        }
+        .review .content p{
+            font-size: 1.4rem;
+            color: var(--light-color);
+            padding: 1rem 0;
+            line-height: 2;
+        }
+
+        .review .box-container{
+            flex: 1 1 42rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .review .box-container .box{
+            flex: 1 1 20rem;
+            border-radius: 1rem;
+            padding: 2rem;
+            background: var(--bg-color);
+            border: .2rem solid var(--black);
+
+            &:hover{
+            border: var(--border);
+             }
+        }
+
+        .review .box-container .box p{
+            font-size: 1.4rem;
+            padding-bottom: 1rem;
+            line-height: 2;
+            color: var(--light-color);
+        }
+
+        .review .box-container .box .user{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .review .box-container .box .user img{
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+        }
+
+        .review .box-container .box .user h3{
+            font-size: 1.7rem;
+            color: var(--white);
+        }
+
+        .review .box-container .box .user span{
+            color: var(--light-color);
+            font-size: 1.5rem;
+        }
+
+        .banner{
+            background:linear-gradient(var(--black-bg),var(--black-bg)), url({% static 'web/images/10.jpg' %}) no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding: 3rem 2rem;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .banner .content span{
+            font-size: 2rem;
+            color: var(--blue);
+        }
+
+        .banner .content h3{
+            font-size: 4rem;
+            color: var(--white);
+            margin-top: 1rem;
+        }
+
+        .banner .content p{
+            max-width: 60rem;
+            margin: 1rem auto;
+            font-size: 1.4rem;
+            color: var(--light-color);
+            line-height: 2;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+{% block rest %}
+<!--about section starts-->
+
+<section class="about" id="about">
+
+    <div class="video-container" data-aos="fade-right" data-aos-delay="300">
+        <video src="{% static 'web/videos/v1.mp4'%}" muted autoplay loop class="video"></video>
+        <div class="controls">
+            <span class="control-btn" data-src="{% static 'web/videos/v1.mp4'%}"></span>
+            <span class="control-btn" data-src="{% static 'web/videos/v2.mp4'%}"></span>
+            <span class="control-btn" data-src="{% static 'web/videos/v3.mp4'%}"></span>
+        </div>
+    </div>
+
+    <div class="content" data-aos="fade-left" data-aos-delay="600">
+        <span>why choose us?</span>
+        <h3>Nature's Majesty Awaits You</h3>
+        <p>Video provides a powerful way to help you prove your point. When you click Online
+            Video, you can paste in the embed code for the video you want to add.</p>
+        <a class="btn" href="#">read more</a>
+    </div>
+
+</section>
+
+<!--about section ends-->
+
+
+<!--review section starts-->
+
+<section class="review">
+
+    <div class="content" data-aos="fade-right" data-aos-delay="300">
+        <span>testimonials</span>
+        <h3>good news from our clients</h3>
+        <p>Video provides a powerful way to help you prove your point. When you click Online
+            Video, you can paste in the embed code for the video you want to add.</p>
+    </div>
+
+    <div class="box-container" >
+
+        <div class="box" data-aos="fade-left" data-aos-delay="600">
+            <p>Video provides a powerful way to help you prove your point.</p>
+            <div class="user">
+                <img src="{% static 'web/images/pro3 (3).jpg' %}" alt="" >
+                <div class="info">
+                    <h3>john deo</h3>
+                    <span>designer</span>
+                </div>
+            </div>
+        </div>
+        <div class="box" data-aos="fade-left" data-aos-delay="900">
+            <p>Video provides a powerful way to help you prove your point.</p>
+            <div class="user">
+                <img src="{% static 'web/images/pro4 (2).jpg' %}" alt="" >
+                <div class="info">
+                    <h3>john deo</h3>
+                    <span>designer</span>
+                </div>
+            </div>
+        </div>
+        <div class="box" data-aos="fade-left" data-aos-delay="1000">
+            <p>Video provides a powerful way to help you prove your point.</p>
+            <div class="user">
+                <img src="{% static 'web/images/pro5 (2).jpg' %}" alt="" >
+                <div class="info">
+                    <h3>john deo</h3>
+                    <span>designer</span>
+                </div>
+            </div>
+        </div>
+        <div class="box" data-aos="fade-left" data-aos-delay="1200">
+            <p>Video provides a powerful way to help you prove your point.</p>
+            <div class="user">
+                <img src="{% static 'web/images/pro1 (2).jpg' %}" alt="">
+                <div class="info">
+                    <h3>john deo</h3>
+                    <span>designer</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!--review section ends-->
+
+<!--banner section starts-->
+
+<div class="banner">
+
+    <div class="content" data-aos="zoom-in-up" data-aos-delay="500">
+        <span>start your adventures</span>
+        <h3>Let's Explore This World</h3>
+        <p>Video provides a powerful way to help you prove your point. When you click
+            !!Video provides a powerful way to help you prove your point. When you click</p>
+        <a href="home#book-form" class="btn">book now</a>
+    </div>
+
+</div>
+
+<!--banner section ends-->
+
+
+{% endblock %}
+
+</body>
+
+<script>
+    document.querySelectorAll('.about .video-container .controls .control-btn').forEach(btn => {
+        btn.onclick = () => {
+            let src = btn.getAttribute('data-src');
+            document.querySelector('.about .video-container .video').src = src;
+        }
+    })
+</script>
+</html>

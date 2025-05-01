@@ -1,0 +1,304 @@
+{% include 'web/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOGS</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.3/aos.css">
+
+    <style>
+
+        .blogs {
+            margin-top: 8rem;
+        }
+
+        .blogs .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+            gap: 1.5rem;
+        }
+
+        .blogs .box-container .box {
+            border-radius: 1rem;
+            background: var(--bg-color);
+            overflow: hidden;
+
+        &
+        :hover {
+
+        .image img {
+            transform: scale(1.1);
+        }
+
+        }
+        }
+
+        .blogs .box-container .box .image {
+            height: 25rem;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .blogs .box-container .box .image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .blogs .box-container .box .content {
+            padding: 2rem;
+        }
+
+        .blogs .box-container .box .content .link {
+            font-size: 2rem;
+            color: var(--white);
+
+        &
+        :hover {
+            color: var(--blue);
+        }
+
+        }
+
+        .blogs .box-container .box .content p {
+            padding: 1rem 0;
+            font-size: 1.4rem;
+            color: var(--light-color);
+            line-height: 2;
+        }
+
+        .blogs .box-container .box .content .icon {
+            padding-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .blogs .box-container .box .content .icon a {
+            font-size: 1.4rem;
+            color: var(--light-color);
+
+        &
+        :hover {
+            color: var(--blue);
+        }
+
+        }
+
+        .blogs .box-container .box .content .icon a i {
+            padding-right: .5rem;
+            color: var(--blue);
+        }
+
+        .post {
+            color: var(--blue);
+            border: var(--border)
+            border-radius: 5rem;
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-size: 1.7rem;
+            border: var(--border);
+            cursor: pointer;
+            background: none;
+            margin-left: 110rem;
+        }
+
+        .center {
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        .warning {
+            border-radius: 5px;
+            width: 220px;
+            height: 30px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+            margin: 20px;
+            background-color: #212121;
+            box-shadow: 3px 3px 4px #424242, -3px -3px 4px #424242;
+            color: #BDBDBD;
+            position: inherit;
+            margin-left: 1050px;
+            font-size: 20px;
+            margin-top: -36px;
+
+        }
+
+        .warning:hover {
+            background-color: #42424263;
+            transition: 0.5s;
+        }
+
+        .warning span {
+            color: beige;
+            font-size: 10px;
+        }
+
+        .rotate {
+            animation: rotate 2s linear infinite;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+
+<!--blogs section starts-->
+
+<section class="blogs" id="blogs">
+
+
+    <div class="heading">
+        <span>blogs & posts</span>
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="center">
+                    <div class="warning">
+                        <i class="fa fa-exclamation-triangle rotate"></i>
+                        &nbsp; &nbsp;
+                        <span>Oops! {{ msg }} </span>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <div>
+            <btn class="post" onclick="nextpage()">post</btn>
+        </div>
+        <h1 style="margin-top: -4.5rem">we untold stories</h1>
+    </div>
+
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="{% static 'web/images/blog3.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Life is a journey, not a destination</a>
+                <p>Video provides a powerful way to help you prove your point. When you click</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>21st may, 2021</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+            <div class="image">
+                <img src="{% static 'web/images/blog1.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Life is a journey, not a destination</a>
+                <p>Video provides a powerful way to help you prove your point. When you click</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>21st may, 2021</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+            <div class="image">
+                <img src="{% static 'web/images/blog2.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Life is a journey, not a destination</a>
+                <p>Video provides a powerful way to help you prove your point. When you click</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>21st may, 2021</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="600">
+            <div class="image">
+                <img src="{% static 'web/images/man3.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Life is a journey, not a destination</a>
+                <p>Video provides a powerful way to help you prove your point. When you click</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>21st may, 2021</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="750">
+            <div class="image">
+                <img src="{% static 'web/images/man5.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Life is a journey, not a destination</a>
+                <p>Video provides a powerful way to help you prove your point. When you click</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>21st may, 2021</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="900">
+            <div class="image">
+                <img src="{% static 'web/images/man4.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <a href="#" class="link">Life is a journey, not a destination</a>
+                <p>Video provides a powerful way to help you prove your point. When you click</p>
+                <div class="icon">
+                    <a href="#"><i class="fas fa-clock"></i>21st may, 2021</a>
+                    <a href="#"><i class="fas fa-user"></i>by admin</a>
+                </div>
+            </div>
+        </div>
+
+        {% for i in info %}
+            <div class="box" data-aos="fade-up" data-aos-delay="900">
+                <div class="image">
+                    <img src={{ i.Image.url }} alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="link">{{ i.Title }}</a>
+                    <p>{{ i.Description }}</p>
+                    <div class="icon">
+                        <a href="#"><i class="fas fa-clock"></i>{{ i.Date }}</a>
+                        <a href="#"><i class="fas fa-user"></i>{{ i.Name }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+
+</section>
+
+<!--blogs section ends-->
+
+
+</body>
+<script>
+    function nextpage() {
+        window.location.href = 'post'
+    }
+
+</script>
+</html>
+
+

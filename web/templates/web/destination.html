@@ -1,0 +1,201 @@
+{% include 'web/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DESTINATION</title>
+
+    <style>
+
+        .destination {
+            margin-top: 8rem;
+        }
+
+        .destination .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .destination .box-container .box {
+            border-radius: 1rem;
+            overflow: hidden;
+            background: var(--bg-color);
+
+        &
+        :hover img {
+            transform: scale(1.1);
+        }
+
+        }
+
+        .destination .box-container .box .image {
+            height: 20rem;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .destination .box-container .box .image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .destination .box-container .box .content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .destination .box-container .box .content h3 {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .destination .box-container .box .content p {
+            padding: 1rem 0;
+            font-size: 1.4rem;
+            color: var(--light-color);
+            line-height: 2;
+        }
+
+        .destination .box-container .box .content a {
+            font-size: 1.7rem;
+            color: var(--blue);
+
+        &
+        :hover i {
+            padding-left: 1rem;
+        }
+
+        }
+
+        .destination .box-container .box .content a i {
+            padding-right: .5rem;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!--destination section starts-->
+
+<section class="destination" id="destination">
+
+    <div class="heading">
+        <span>our destination</span>
+        <h1>make yours destination</h1>
+    </div>
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+            <div class="image">
+                <img src="{% static 'web/images/yellow.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Fort Aguada, Goa</h3>
+                <p>Aguada Fort, a testimony to Goa's rich cultural heritage.</p>
+                <a href="#">Read More<i class="fas fa-angle-right"></i> </a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+            <div class="image">
+                <img src="{% static 'web/images/11.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Baros Island, Maldives</h3>
+                <p>Blessed with cyan blue water and spectacular coral reef.</p>
+                <a href="#">read more<i class="fas fa-angle-right"></i> </a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+            <div class="image">
+                <img src="{% static 'web/images/boat.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Lake Toba, Indonesia</h3>
+                <p>In diversity we find our strongest bonds and most violent divides.</p>
+                <a href="#">read more<i class="fas fa-angle-right"></i> </a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="600">
+            <div class="image">
+                <img src="{% static 'web/images/stone.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Akureyri, northern Iceland</h3>
+                <p>Sometimes it's hard to imagine living anywhere else.</p>
+                <a href="#">read more<i class="fas fa-angle-right"></i> </a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="750">
+            <div class="image">
+                <img src="{% static 'web/images/discover.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Tanah Lot Temple, Bali</h3>
+                <p>Parched at the top at an outcrop with the waves crashing on the shore.</p>
+                <a href="#">read more<i class="fas fa-angle-right"></i> </a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="900">
+            <div class="image">
+                <img src="{% static 'web/images/snow.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Shree Mangesh temple, Goa</h3>
+                <p>Dedicated to Bhagavan Manguesh, an incarnation of Shiva.</p>
+                <a href="#">read more<i class="fas fa-angle-right"></i> </a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="1150">
+            <div class="image">
+                <img src="{% static 'web/images/sunset.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Golconda Fort, Hyderabad</h3>
+                <p>One of the most magnificent fortress complexes in India.</p>
+                <a href="#">read more<i class="fas fa-angle-right"></i> </a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="1300">
+            <div class="image">
+                <img src="{% static 'web/images/blue.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Phi Phi Islands, Thailand</h3>
+                <p>With pristine waters and vibrant parties, these are wonderful.</p>
+                <a href="#">read more<i class="fas fa-angle-right"></i> </a>
+            </div>
+        </div>
+
+        {% for des in dest %}
+            <div class="box" data-aos="fade-up" data-aos-delay="1300">
+                <div class="image">
+                    <img src={{ des.pic.url }} alt="" >
+                </div>
+                <div class="content">
+                    <h3>{{ des.title }}</h3>
+                    <p>{{des.msg}}</p>
+                    <a href="#">{{ des.fee }}<i class="fas fa-angle-right"></i> </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!--destination section ends-->
+
+
+</body>
+</html>
